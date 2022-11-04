@@ -3,6 +3,7 @@
 <div>
     {% if user.is_authenticated %}
         {{ user.username }} さん
+        <a href="/blog/mypage">マイページ</a>
     {% else %}
         ログインしていません         
         <div>
