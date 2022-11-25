@@ -16,13 +16,25 @@
                 </div>
             {% endif %}
         </div>
-        <h2>投稿された記事一覧</h2>
-        {% for article in articles %}
-            <div>
-                <a href="/blog/articles/{{ article.id }}">
-                    {{ article.title }}
-                </a>
-            </div>
-        {% endfor %}
+        <div>
+            <h2>投稿された記事一覧</h2>
+            {% for article in articles %}
+                <div>
+                    <a href="/blog/articles/{{ article.id }}">
+                        {{ article.title }}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        <div>
+            <h2>Qiitaの記事一覧</h2>
+            {% for qiita_article in qiita_articles %}
+                <div>
+                    <a href="{{ qiita_article.url }}">
+                        {{ qiita_article.title }}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
     </body>
 </html>
