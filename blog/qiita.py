@@ -15,6 +15,9 @@ class QiitaApiClient:
             headers={"Authorization": "Bearer "},
         )
 
+        if response.status_code != 200:
+            raise RuntimeError("Qiitaの記事が取得できませんでした")
+
         qiita_articles = []
         json = response.json()
         for json_article in json:
